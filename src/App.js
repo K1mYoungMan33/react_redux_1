@@ -3,6 +3,7 @@ import {Fragment} from "react";
 import './App.css';
 import './undefinedRender';
 import UndRend from "./undefinedRender";
+import MyComponent from "./MyComponent";
 
 function App() {
 
@@ -53,6 +54,10 @@ function App() {
               /*테스트주석*/
               !-- 테스트주석 -->
               {/*테스트주석*/}
+          </>
+          <>
+              <MyComponent/>
+              <MyComponent test={"aaaa"}/>
           </>
       </Fragment>
   );
