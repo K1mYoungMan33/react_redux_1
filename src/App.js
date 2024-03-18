@@ -1,16 +1,22 @@
 import logo from './logo.svg';
+import {Fragment} from "react";
 import './App.css';
+import './undefinedRender';
+import UndRend from "./undefinedRender";
 
 function App() {
 
     console.log( "App 실행" );
     let aaaa = "반가와";
 
+    let bbb = undefined;
+
 
 
 
 
   return (
+      <Fragment>
       <div className="App">
           가나다라
         <img src={logo} className="App-logo" alt="logo"/>
@@ -18,6 +24,17 @@ function App() {
           <br/>
           {aaaa}
       </div>
+          <>
+              {aaaa === "반가와" && <h1>반가완</h1>}
+              {aaaa === "반가워" && <h1>반가원</h1>}
+              {bbb || "safsdfsdf"}<br/>
+              {bbb}<br/>
+              {"" + bbb}<br/>
+          </>
+          <>
+              <UndRend/>aa
+          </>
+      </Fragment>
   );
 }
 
