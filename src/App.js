@@ -2,24 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+    console.log( "App 실행" );
+    let aaaa = "반가와";
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          가나다라
+        <img src={logo} className="App-logo" alt="logo"/>
+          마바사자
+          <br/>
+          {aaaa}
+      </div>
   );
 }
 
 export default App;
+
+
+/*
+function App(){
+    return (
+        <div>
+            Hello<b>react</b>
+        </div>
+    );
+}
+
+function App() {
+    return React.createElement( "div", null, "Hello", React.createElement("b", null, "react"));
+}
+*/
+
+
