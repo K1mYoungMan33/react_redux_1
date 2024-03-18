@@ -4,6 +4,7 @@ import './App.css';
 import './undefinedRender';
 import UndRend from "./undefinedRender";
 import MyComponent from "./MyComponent";
+import MyComponentClass from "./MyComponentClass";
 
 function App() {
 
@@ -57,7 +58,9 @@ function App() {
           </>
           <>
               <MyComponent/>
-              <MyComponent test={"aaaa"}/>
+              <MyComponent test={"aaaa"} name={33}  />
+              <MyComponent name='홍길동' address='대구광역시' age={10}> 얖얖 </MyComponent>
+              <MyComponentClass favoriteNumber={7}> 아이우에오 </MyComponentClass>
           </>
       </Fragment>
   );
