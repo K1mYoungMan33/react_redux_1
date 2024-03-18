@@ -1,7 +1,7 @@
 
 function UndRend() {
     const ccc = undefined;
-    return ( ccc );
+    return ccc;
 }
 
 export default UndRend;

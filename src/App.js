@@ -11,6 +11,13 @@ function App() {
 
     let bbb = undefined;
 
+    const style = {
+        backgroundColor:'black',
+        color:'aqua',
+        fontSize:'48px',
+        fontWeight:'bold',
+        padding: 16
+    }
 
 
 
@@ -33,6 +40,19 @@ function App() {
           </>
           <>
               <UndRend/>aa
+          </>
+          <>
+              <div className="Abc" style={style}>
+                  영남인재교육원.
+                  <br/>
+              </div>
+          </>
+          <>
+              테스트주석
+              //테스트주석
+              /*테스트주석*/
+              !-- 테스트주석 -->
+              {/*테스트주석*/}
           </>
       </Fragment>
   );

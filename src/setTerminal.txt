@@ -5,4 +5,8 @@ npm install -g npm@10.5.0
 npm -i fragment
 
 
+문법 검사 도구
+npm install eslint
+
+
 
