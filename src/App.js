@@ -7,6 +7,7 @@ import MyComponent from "./MyComponent";
 import MyComponentClass from "./MyComponentClass";
 import Say from "./Say";
 import EventPractice from "./EventPractice";
+import EventPracticeFun from "./EventPracticeFun";
 
 function App() {
 
@@ -69,6 +70,10 @@ function App() {
           </>
           <>
               <EventPractice/>
+          </>
+          <>
+              <hr/>
+              <EventPracticeFun/>
           </>
       </Fragment>
   );
