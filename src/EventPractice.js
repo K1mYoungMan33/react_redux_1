@@ -3,6 +3,8 @@ import {Component} from "react";
 
 class EventPractice extends Component {
 
+    state= {message:"aaa"};
+
     render() {
 
         return(
@@ -14,8 +16,16 @@ class EventPractice extends Component {
                        onChange={
                            (e)=>{
                                console.log(e)
-                           }
-                       }/>
+                               // window?.gv?.push(e)
+                               window.myValueArray = (window.myValueArray ? window.myValueArray : []).concat( [e] )
+
+                           }}
+                           value={this.state.message}
+                       />
+                <button onClick={
+                ()=>{
+                    console.log( "button->" + this.state.message)
+                }}/>
 
             </div>
         )
