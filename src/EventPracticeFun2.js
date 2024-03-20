@@ -4,10 +4,10 @@ import EventPracticeFun from "./EventPracticeFun";
 
 const EventPracticeFun2=()=>{
     const [form, setForm] = useState({
-        username:'',
-        address:'',
-        age:'',
-        tel:'',
+        username:'aaa',
+        address:'bbb',
+        age:333,
+        tel:'ddd',
     });
     const { username, address, age, tel } = form;
 
@@ -36,10 +36,10 @@ const EventPracticeFun2=()=>{
 
 
     const fields = [
-        { name: 'username', placeholder: '사용자명', value: username },
-        { name: 'address', placeholder: '주소', value: address },
-        { name: 'age', placeholder: '나이', value: age },
-        { name: 'tel', placeholder: '전화번호', value: tel, onKeyDown:onKeyPress },
+        { name: 'username', placeholder: '사용자명' },
+        { name: 'address', placeholder: '주소' },
+        { name: 'age', placeholder: '나이', type:'number' },
+        { name: 'tel', placeholder: '전화번호', onKeyDown:onKeyPress },
     ];
 
     return(
@@ -49,7 +49,8 @@ const EventPracticeFun2=()=>{
                 <input
                     {...field}
                     key={index}
-                    type={'text'}
+                    value={form[field.name]}
+                    type={field.type || 'text'}
                     onChange={onChange}
                 />
             ))}
