@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {Fragment} from "react";
+import {Fragment, useRef} from "react";
 import './App.css';
 import './undefinedRender';
 import UndRend from "./undefinedRender";
@@ -10,6 +10,7 @@ import EventPractice from "./EventPractice";
 import EventPracticeFun from "./EventPracticeFun";
 import EventPracticeFun2 from "./EventPracticeFun2";
 import ValidationSample from "./ValidationSample";
+import ScrollBox from "./ScrollBox";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
 
 
+    const scrollBoxRef = useRef(null);
 
   return (
       <Fragment>
@@ -84,6 +86,12 @@ function App() {
           <>
               <hr/>
               <ValidationSample/>
+          </>
+          <>
+              <hr/>
+              {/*<ScrollBox ref={(ref)=> this.scrollBox=ref}/>*/}
+              <ScrollBox ref={scrollBoxRef}/>
+              <button onClick={()=>scrollBoxRef.current.scrollToBottom()}>맨 밑으로</button>
           </>
       </Fragment>
   );
