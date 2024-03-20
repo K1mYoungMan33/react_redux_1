@@ -20,25 +20,52 @@ const EventPracticeFun=()=>{
         }
     }
 
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
+        if (name === 'username') {
+            setUsername(value);
+        } else if (name === 'message') {
+            setMessage(value);
+        }
+    };
+
+    const fields = [
+        { name: 'username', placeholder: '사용자명', value: username },
+        { name: 'message', placeholder: '메시지를 입력해주세요', value: message }
+    ];
+
     return (
         <div>
             <h1>연스</h1>
-            <input
-                type={'text'}
-                name={'username'}
-                placeholder={'사용자명'}
-                value={username}
-                onChange={onChangeUsername}
-                />
 
-            <input
-                type={'text'}
-                name={'message'}
-                placeholder={'메시지를 입력해주세요'}
-                value={message}
-                onChange={onChangeMessage}
-                onKeyDown={onKeyPress}
+
+            {fields.map((field, index) => (
+                <input
+                    key={index}
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    value={field.value}
+                    onChange={onChangeInput}
+                    onKeyDown={onKeyPress}
                 />
+            ))}
+
+            {/*<input*/}
+            {/*    type={'text'}*/}
+            {/*    name={'username'}*/}
+            {/*    placeholder={'사용자명'}*/}
+            {/*    value={username}*/}
+            {/*    onChange={onChangeUsername}*/}
+            {/*    />*/}
+
+            {/*<input*/}
+            {/*    type={'text'}*/}
+            {/*    name={'message'}*/}
+            {/*    placeholder={'메시지를 입력해주세요'}*/}
+            {/*    value={message}*/}
+            {/*    onChange={onChangeMessage}*/}
+            {/*    onKeyDown={onKeyPress}*/}
+            {/*    />*/}
         </div>
     )
 }
