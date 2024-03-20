@@ -9,6 +9,7 @@ import Say from "./Say";
 import EventPractice from "./EventPractice";
 import EventPracticeFun from "./EventPracticeFun";
 import EventPracticeFun2 from "./EventPracticeFun2";
+import ValidationSample from "./ValidationSample";
 
 function App() {
 
@@ -79,6 +80,10 @@ function App() {
           <>
               <hr/>
               <EventPracticeFun2/>
+          </>
+          <>
+              <hr/>
+              <ValidationSample/>
           </>
       </Fragment>
   );
