@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {Fragment, useRef} from "react";
+import {Fragment, useRef, useState} from "react";
 import './App.css';
 import './undefinedRender';
 import UndRend from "./undefinedRender";
@@ -11,6 +11,10 @@ import EventPracticeFun from "./EventPracticeFun";
 import EventPracticeFun2 from "./EventPracticeFun2";
 import ValidationSample from "./ValidationSample";
 import ScrollBox from "./ScrollBox";
+import IterationSample from "./IterationSample";
+import LifeCycleSample from "./LifeCycleSample";
+import ErrorBoundary from "./ErrorBoundary";
+import ErrorThrow from "./ErrorThrow";
 
 function App() {
 
@@ -30,6 +34,20 @@ function App() {
 
 
     const scrollBoxRef = useRef(null);
+
+
+    function getRandomColor() {
+        return '#' + Math.floor( Math.random() * 16777215 ).toString( 16 );
+    }
+
+    // let randomColor = { color : '' };
+    const [ randomColor, setRandomColor ] = useState( { color : '' } );
+
+    const handleClick=()=>{
+        setRandomColor( {
+            color: getRandomColor()
+        });
+    }
 
   return (
       <Fragment>
@@ -93,6 +111,20 @@ function App() {
               <ScrollBox ref={scrollBoxRef}/>
               <button onClick={()=>scrollBoxRef.current.scrollToBottom()}>맨 밑으로</button>
           </>
+          <>
+              <hr/>
+              <IterationSample/>
+          </>
+          <>
+              <LifeCycleSample/>
+          </>
+          <>
+              <button onClick={handleClick}>랜덤 색상</button>
+              <LifeCycleSample color={randomColor.color}/>
+              <ErrorBoundary>
+                  <ErrorThrow/>
+              </ErrorBoundary>
+          </>
       </Fragment>
   );
 }
@@ -113,5 +145,40 @@ function App() {
     return React.createElement( "div", null, "Hello", React.createElement("b", null, "react"));
 }
 */
+
+
+
+const uniq = array => array.filter( (v,i,self)=>self.indexOf(v) ===i);
+console.log( uniq( [2,1,2,3,4,3,4]))
+
+const set = new Set( [1,2,3]);
+console.log( Object.getOwnPropertyDescriptor( Set.prototype, 'size' ) )
+// set.size=10;
+console.log( set.size );
+
+
+set.add(NaN).add(NaN);
+set.add(0).add(-0);
+
+set.add(1)
+    .add(true)
+    .add(undefined)
+    .add(null)
+    .add({})
+    .add([])
+    .add(()=>{});
+
+console.log( Symbol.iterator in set ) ;
+
+const setA = new Set( [1,2,3,4]);
+const setB = new Set( [2,4]);
+console.log( setA.intersection(setB) );
+console.log( setA.union(setB) );
+console.log( setA.difference(setB) );
+// console.log( setA.isSuperset(setB) );
+
+
+
+
 
 
