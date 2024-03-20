@@ -5,6 +5,8 @@ import './undefinedRender';
 import UndRend from "./undefinedRender";
 import MyComponent from "./MyComponent";
 import MyComponentClass from "./MyComponentClass";
+import Say from "./Say";
+import EventPractice from "./EventPractice";
 
 function App() {
 
@@ -61,6 +63,12 @@ function App() {
               <MyComponent test={"aaaa"} name={33}  />
               <MyComponent name='홍길동' address='대구광역시' age={10}> 얖얖 </MyComponent>
               <MyComponentClass favoriteNumber={7}> 아이우에오 </MyComponentClass>
+          </>
+          <>
+              <Say></Say>
+          </>
+          <>
+              <EventPractice/>
           </>
       </Fragment>
   );
