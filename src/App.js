@@ -16,6 +16,7 @@ import LifeCycleSample from "./LifeCycleSample";
 import ErrorBoundary from "./ErrorBoundary";
 import ErrorThrow from "./ErrorThrow";
 import Info from "./Info";
+import Counter from "./Counter";
 
 function App() {
 
@@ -49,6 +50,8 @@ function App() {
             color: getRandomColor()
         });
     }
+
+    const [visible, setVisible] = useState( false );
 
   return (
       <Fragment>
@@ -128,6 +131,15 @@ function App() {
           </>
           <>
               <Info/>
+              <button onClick={()=>{
+                  setVisible(!visible);
+              }}
+                      >{visible?'숨기기':'보이기'}</button>
+              <hr/>
+              {visible&&<Info/>}
+          </>
+          <>
+              <Counter/>
           </>
       </Fragment>
   );
