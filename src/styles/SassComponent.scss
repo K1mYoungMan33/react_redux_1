@@ -34,7 +34,7 @@
       background: $violet;
       @include square(7);
     }
-    &.hover {
+    &:hover {
       background: black;
     }
   }

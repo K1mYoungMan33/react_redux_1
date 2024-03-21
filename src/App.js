@@ -20,6 +20,7 @@ import Counter from "./Counter";
 import {AverageNonMemo} from "./AverageNonMemo";
 import {InfoHook} from "./InfoHook";
 import {SassComponent} from "./styles/SassComponent";
+import {CSSModules} from "./styles/CSSModules";
 
 function App() {
 
@@ -152,6 +153,9 @@ function App() {
           </>
           <>
               <SassComponent/>
+          </>
+          <>
+              <CSSModules/>
           </>
       </Fragment>
   );
