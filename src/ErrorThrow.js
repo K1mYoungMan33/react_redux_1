@@ -7,7 +7,7 @@ export default class ErrorThrow extends Component {
 
         return <div>
             <p>hi</p>
-            <button >"onClick=()=>{this.props.missing.value}>missing"</button>
+            <button >"onClick=()=>this.props.missing.value}>missing"</button>
         </div>
     }
 }

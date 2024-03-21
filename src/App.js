@@ -15,6 +15,7 @@ import IterationSample from "./IterationSample";
 import LifeCycleSample from "./LifeCycleSample";
 import ErrorBoundary from "./ErrorBoundary";
 import ErrorThrow from "./ErrorThrow";
+import Info from "./Info";
 
 function App() {
 
@@ -124,6 +125,9 @@ function App() {
               <ErrorBoundary>
                   <ErrorThrow/>
               </ErrorBoundary>
+          </>
+          <>
+              <Info/>
           </>
       </Fragment>
   );
