@@ -24,9 +24,25 @@ const Info=()=> {
         setNickname(e.target.value);
     }
 
+    let aaa = 'onChange';
+    let bbb = {}
+
     const CustomInput = ({ param }) => (
-        // <input type='text' value={this[param]} onChange={this['onChange'+param]} />
-        <></>
+        console.log( 'onChange'+param ) ||
+        // console.log( 'onChange'+param.charAt(0).toUpperCase() + param.slice(1) ) ||
+        // console.log( ['name'] ) ||
+        // console.log( ['onChangeName'] ) ||
+        // (false&(aaa = ('onChange'+param.charAt(0).toUpperCase() + param.slice(1) ) ) )||
+        // (const {name}=param)||
+        // console.log( Info.call(param ) ||
+        (false&(bbb={
+            name:{value:name,onChange:onChangeName},
+            nickname:{value:nickname,onChange:onChangeNickname},
+        }[param]))||
+        // console.log( [aaa] ) ||
+        // <input type='text' value={[param]} onChange={['onChange'+param.charAt(0).toUpperCase() + param.slice(1)]} />
+        // <input type='text' value={param} onChange={(e)=>Info.call(onChangeName)} />
+        <input type='text' {...bbb} />
     );
 
     return (

@@ -17,6 +17,9 @@ import ErrorBoundary from "./ErrorBoundary";
 import ErrorThrow from "./ErrorThrow";
 import Info from "./Info";
 import Counter from "./Counter";
+import {AverageNonMemo} from "./AverageNonMemo";
+import {InfoHook} from "./InfoHook";
+import {SassComponent} from "./styles/SassComponent";
 
 function App() {
 
@@ -140,6 +143,15 @@ function App() {
           </>
           <>
               <Counter/>
+          </>
+          <>
+              <AverageNonMemo/>
+          </>
+          <>
+              <InfoHook/>
+          </>
+          <>
+              <SassComponent/>
           </>
       </Fragment>
   );
