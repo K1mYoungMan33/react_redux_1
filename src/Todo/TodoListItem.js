@@ -4,7 +4,7 @@ import cn from 'classnames';
 import {BiCheckboxMinus} from "react-icons/bi";
 import React from 'react';
 
-const TodoListItem=( { todo, onRemove, onToggle })=>{
+export const TodoListItem=( { todo, onRemove, onToggle })=>{
     const { id, text, checked } = todo;
 
     return(
@@ -21,6 +21,5 @@ const TodoListItem=( { todo, onRemove, onToggle })=>{
         </div>
     )
 };
-export default TodoListItem;
 
-// export default React.memo( TodoListItem );
+export default React.memo( TodoListItem );

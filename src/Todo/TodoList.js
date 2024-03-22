@@ -1,4 +1,4 @@
-import {TodoListItem} from "./TodoListItem.js";
+import TodoListItem from "./TodoListItem.js";
 import './TodoList.scss'
 
 export const TodoList=( {todos, onRemove, onToggle } )=>{
