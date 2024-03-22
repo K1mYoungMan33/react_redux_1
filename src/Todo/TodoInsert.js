@@ -1,0 +1,33 @@
+import { MdAdd } from 'react-icons/md';
+
+import './TodoInsert.scss';
+import { BiAddToQueue} from "react-icons/bi";
+import {useCallback, useState} from "react";
+
+export const TodoInsert=( { onInsert } )=>{
+    const [ value, setValue ] = useState( '' );
+    const onChange = useCallback(e=>
+        console.log( e.nativeEvent.data ) ||
+        console.log( e.target.value ) ||
+        setValue( e.target.value )
+    , []);
+    const onSubmit = useCallback(
+        e=>{
+            onInsert( value );
+            setValue('');
+            e.preventDefault();
+        },[ onInsert, value]
+    )
+    return (
+        <form className="TodoInsert" onSubmit={onSubmit}>
+            <input placeholder="할 일을 입력하세요"
+                   value={value}
+                   onChange={onChange}
+            />
+            <button type="submit">
+                <MdAdd />
+                <BiAddToQueue />
+            </button>
+        </form>
+    );
+};
