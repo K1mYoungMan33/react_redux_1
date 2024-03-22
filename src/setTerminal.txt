@@ -15,3 +15,14 @@ npm install eslint
 npm run build
 
 
+npm run eject
+
+npm install classnames
+
+
+npm install styled-components
+
+
+
+
+

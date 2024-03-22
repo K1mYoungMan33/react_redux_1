@@ -21,6 +21,7 @@ import {AverageNonMemo} from "./AverageNonMemo";
 import {InfoHook} from "./InfoHook";
 import {SassComponent} from "./styles/SassComponent";
 import {CSSModules} from "./styles/CSSModules";
+import {StyledComponent} from "./styles/StyledComponent";
 
 function App() {
 
@@ -156,6 +157,9 @@ function App() {
           </>
           <>
               <CSSModules/>
+          </>
+          <>
+              <StyledComponent/>
           </>
       </Fragment>
   );
