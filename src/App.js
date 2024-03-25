@@ -11,6 +11,8 @@ import {Article} from "./pages/Article";
 import {Layout} from "./pages/Layout";
 import {ArticlesNavi} from "./pages/ArticlesNavi";
 import {NotFound} from "./pages/NotFound";
+import {MyPage} from "./pages/MyPage";
+import {Login} from "./pages/Login";
 
 function App() {
   return (<>
@@ -31,6 +33,9 @@ function App() {
                     <Route path=":id" element={<Article />} />
 
                 </Route>
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/mypage" element={<MyPage />} />
 
         </Route>
             <Route path="*" element={<NotFound />}/>

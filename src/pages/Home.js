@@ -35,6 +35,12 @@ export const Home=()=>{
                 <li>
                     <Link to="articlesNavi">게시글 목록(Navi)</Link>
                 </li>
+                <li>
+                    <Link to="/login">login</Link>
+                </li>
+                <li>
+                    <Link to="/mypage">mypage</Link>
+                </li>
             </ul>
         </div>
     )
