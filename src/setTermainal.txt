@@ -4,6 +4,11 @@
 
 npm i axios
 
+npm i styled-component
+
+
+npm i styled-components
+
 
 
 
