@@ -6,13 +6,15 @@ export const About2=()=>{
     // const mode = searchParams.get( 'mode' ) || '';
     const myFunc = (param)=>searchParams.get( param ) || '';
     // const { detail, mode } = searchParams;
-    const detail = myFunc( 'detail ');
-    const mode = myFunc( 'mode ');
+    const detail = myFunc( 'detail');
+    const mode = myFunc( 'mode');
+    // const detail2 = searchParams.get( 'detail' ) || '';
     const location = useLocation();
-    console.log( "dm", detail, mode )
+    // console.log( "dm", detail, mode, detail2 )
+    // console.log( "func test", myFunc( 'mode '), searchParams.get( param ))
 
     const onToggleDetail=()=>{
-        setSearchParams({ mode, detail: detail ==='true' ? false : true } );
+        setSearchParams({ mode, detail: detail !== 'true' } );
     }
     const onIncreaseMode=()=>{
         // const nextMode= (!mode) ?1:parseInt(mode)+1;
