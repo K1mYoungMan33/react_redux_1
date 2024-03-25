@@ -4,6 +4,8 @@ import {useCallback, useState} from "react";
 import axios from "axios";
 import {NewsList} from "./NewsList";
 import {Categories} from "./Categories";
+import {Route, Routes} from "react-router-dom";
+import {NewsPage} from "./NewsPage";
 
 export const  App=()=> {
   const [ message, setMessage ] = useState( '1' );
@@ -40,8 +42,17 @@ export const  App=()=> {
           <hr/>
         {data && <textarea rows={7} cols={30} value={JSON.stringify(data, [ "id", "title" ], 2 )} readOnly={true} /> }
 
+          <div style={{display:"inline-block"}}>
         <Categories category={category} onSelect={onSelect} />
         <NewsList category={category} />
+          </div>
+
+          <div style={{display:"inline-block"}}>
+          <Routes>
+              <Route path="/" element={<NewsPage />} />
+              <Route path="/:category" element={<NewsPage />} />
+          </Routes>
+          </div>
     </div>
   );
 };
