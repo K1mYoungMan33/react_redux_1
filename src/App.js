@@ -9,6 +9,8 @@ import {About2} from "./pages/About2";
 import {Articles} from "./pages/Articles";
 import {Article} from "./pages/Article";
 import {Layout} from "./pages/Layout";
+import {ArticlesNavi} from "./pages/ArticlesNavi";
+import {NotFound} from "./pages/NotFound";
 
 function App() {
   return (<>
@@ -24,7 +26,14 @@ function App() {
 
           </Route>
 
+
+                <Route path="/articlesNavi" element={<ArticlesNavi />}>
+                    <Route path=":id" element={<Article />} />
+
+                </Route>
+
         </Route>
+            <Route path="*" element={<NotFound />}/>
         </Routes>
       </>
   );

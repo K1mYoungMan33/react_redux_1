@@ -2,10 +2,14 @@ import {useLocation, useSearchParams} from "react-router-dom";
 
 export const About2=()=>{
     const [searchParams, setSearchParams]=useSearchParams();
-    const detail = searchParams.get( 'detail' ) || '';
-    const mode = searchParams.get( 'mode' ) || '';
+    // const detail = searchParams.get( 'detail' ) || '';
+    // const mode = searchParams.get( 'mode' ) || '';
+    const myFunc = (param)=>searchParams.get( param ) || '';
+    // const { detail, mode } = searchParams;
+    const detail = myFunc( 'detail ');
+    const mode = myFunc( 'mode ');
     const location = useLocation();
-    console.log( "location", location )
+    console.log( "dm", detail, mode )
 
     const onToggleDetail=()=>{
         setSearchParams({ mode, detail: detail ==='true' ? false : true } );
