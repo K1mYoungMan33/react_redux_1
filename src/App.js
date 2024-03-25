@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import axios from "axios";
 import {NewsList} from "./NewsList";
+import {Categories} from "./Categories";
 
 export const  App=()=> {
   const [ message, setMessage ] = useState( '1' );
@@ -21,21 +22,26 @@ export const  App=()=> {
       console.log( e )
     }
   }
+
+  const [category, setCategory] = useState( 'all' );
+  const onSelect = useCallback( category => setCategory( category ), [] );
+
     return (
       <div>
         <input value={message} onChange={e=>setMessage(e.target.value)} />
         <div>
           <button onClick={onClick}>불러오기</button>
         </div>
-        {data && <textarea rows={7} value={JSON.stringify(data, null, 2 )} readOnly={true} /> }
+        {data && <textarea rows={7} cols={30} value={JSON.stringify(data, null, 2 )} readOnly={true} /> }
           <hr/>
-        {data && <textarea rows={7} value={JSON.stringify(data, (key,value)=>
+        {data && <textarea rows={7} cols={30} value={JSON.stringify(data, (key,value)=>
             ( typeof value === "string" ) ? undefined : value
         , 2 )} readOnly={true} /> }
           <hr/>
-        {data && <textarea rows={7} value={JSON.stringify(data, [ "id", "title" ], 2 )} readOnly={true} /> }
+        {data && <textarea rows={7} cols={30} value={JSON.stringify(data, [ "id", "title" ], 2 )} readOnly={true} /> }
 
-        <NewsList />
+        <Categories category={category} onSelect={onSelect} />
+        <NewsList category={category} />
     </div>
   );
 };
