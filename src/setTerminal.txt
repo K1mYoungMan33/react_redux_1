@@ -1,0 +1,14 @@
+
+
+
+인스톨 redux
+
+
+?// yarn add redux react-redux
+
+npm i redux-devtools-extension
+
+
+
+
+
