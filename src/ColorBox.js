@@ -1,18 +1,29 @@
-import {ColorContext} from "./color";
+import {ColorConsumer, ColorContext} from "./color";
 
 export const ColorBox=()=>{
     return <>
-            <ColorContext.Consumer>
+            {/*<ColorContext.Consumer>*/}
+        <ColorConsumer>
                 { value =>
                     console.log ( value ) ||
-                <div
+                    <>
+                    <div
                     style={{
                         width: '64px',
                         height: '64px',
-                        background: value.color
+                        background: value.state.color
                     }}
                     />
+                    <div
+                    style={{
+                        width: '32px',
+                        height: '32px',
+                        background: value.state.subColor
+                    }}
+                    />
+                    </>
                 }
-            </ColorContext.Consumer>
+            {/*</ColorContext.Consumer>*/}
+        </ColorConsumer>
     </>
 }
