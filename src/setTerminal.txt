@@ -5,6 +5,9 @@
 npm i redux react-redux redux-actions
 
 
+npm i redux-logger
+
+npm i redux-thunk
 
 
 
