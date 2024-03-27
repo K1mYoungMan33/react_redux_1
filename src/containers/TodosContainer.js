@@ -2,6 +2,8 @@ import {Todos} from "../components/Todos";
 import {connect, useDispatch, useSelector} from "react-redux";
 import {changeInput, insert, remove, toggle} from "../modules/todos";
 import {useCallback} from "react";
+import useActions from "../lib/useActions";
+import React from 'react';
 
 const TodosContainer=(
 // { input, todos, changeInput, insert, toggle, remove, }
@@ -10,6 +12,7 @@ const TodosContainer=(
         input : todos.input,
         todos: todos.todos,
     }));
+    /*
     const dispatch = useDispatch();
     const onChangeInput = useCallback( input=>
         dispatch( changeInput(input))
@@ -27,6 +30,11 @@ const TodosContainer=(
         dispatch( remove( id ) )
         , [ dispatch ]
     );
+    */
+    const [ onChangeInput, onInsert, onToggle, onRemove ] = useActions(
+        [changeInput, insert, toggle, remove ],
+        []
+    )
 
     return (
         <Todos
@@ -43,7 +51,7 @@ const TodosContainer=(
             />
     );
 };
-export default TodosContainer;
+export default React.memo(TodosContainer);
 /*
 export default connect(
     // 비구조화 할당을 통해 todos 를 분리하여

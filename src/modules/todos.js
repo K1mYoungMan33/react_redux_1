@@ -83,9 +83,9 @@ export const todos = handleActions(
         // //         ...state,
         // //         todos: state.todos.filter( todo => todo.id !== action.id )
         // //     };
-        // [REMOVE]: (state, {payload:id }) => ({ ...state, todos: state.todos.filter( todo => todo.id !== id )}),
+        // [REMOVE]: (state, {payload:id }) => ({ ...state, todos: state.todos.filter( todo => todo.id === id )}),
         [REMOVE]: (state, {payload:id }) => produce( state, draft=> {
-            const index = draft.todos.findIndex(todo => todo.id !== id);
+            const index = draft.todos.findIndex(todo => todo.id === id);
             draft.todos.splice(index, 1);
         }),
         // default:
