@@ -12,6 +12,7 @@ import {thunk} from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 
 const sagaMiddleware = createSagaMiddleware();
+const extRedux = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 // const store = createStore( rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
 // const store = createStore( rootReducer, applyMiddleware( loggerMiddleware ) );
 const store = createStore( rootReducer, applyMiddleware( logger, thunk, sagaMiddleware ) );
