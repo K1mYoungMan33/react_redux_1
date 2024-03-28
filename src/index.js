@@ -10,12 +10,11 @@ import {loggerMiddleware} from "./lib/loggerMiddleware";
 import {logger} from "redux-logger/src";
 import {thunk} from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
+import {composeWithDevTools} from "@redux-devtools/extension";
+
 
 const sagaMiddleware = createSagaMiddleware();
-const extRedux = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-// const store = createStore( rootReducer, /* preloadedState, */ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
-// const store = createStore( rootReducer, applyMiddleware( loggerMiddleware ) );
-const store = createStore( rootReducer, applyMiddleware( logger, thunk, sagaMiddleware ) );
+const store = createStore( rootReducer, composeWithDevTools( applyMiddleware( logger, thunk, sagaMiddleware ) ) );
 sagaMiddleware.run( rootSaga ); // 먼저 실행하면 안된다
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
