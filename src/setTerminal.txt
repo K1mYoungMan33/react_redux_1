@@ -11,6 +11,8 @@ npm i redux-thunk
 
 npm i axios
 
+npm i redux-saga
+
 
 
 

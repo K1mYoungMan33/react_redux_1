@@ -10,7 +10,7 @@ export const Sample = ( { loadingPost, loadingUsers, post, users } ) => <div>
         )}
     </section>
     <hr />
-    <sction>
+    <section>
         <h1>사용자 목록</h1>
         { loadingUsers && '로딩 중...'}
         { !loadingUsers && users && (
@@ -22,5 +22,5 @@ export const Sample = ( { loadingPost, loadingUsers, post, users } ) => <div>
                 ))}
             </ul>
         )}
-    </sction>
+    </section>
 </div>;
